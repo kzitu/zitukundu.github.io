@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Zitu Kundu - Geoscientist and Graduate Researcher at University of Barishal, Bangladesh. Specializing in coastal sediment geochemistry, provenance analysis, and environmental pollution.">
 <meta name="keywords" content="Zitu Kundu, Geoscientist, Researcher, University of Barishal, Bangladesh, Geochemistry, Kuakata">
-<title>Zitu Kundu — Geoscientist & Researcher</title>
+<title>Zitu Kundu - Geoscientist and Researcher</title>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -18,20 +18,16 @@ html{scroll-behavior:smooth;}
   --sans:'Inter',sans-serif;--serif:'Source Serif 4',serif;
 }
 body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.7;}
-
 .topbar{background:var(--navy);padding:.6rem 2rem;display:flex;justify-content:space-between;align-items:center;}
 .topbar-l{font-size:.75rem;color:rgba(255,255,255,.7);}
 .topbar-l strong{color:#fff;}
 .topbar-r{font-size:.72rem;color:rgba(255,255,255,.6);}
-
 nav{background:var(--white);border-bottom:3px solid var(--accent);padding:0 2rem;display:flex;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.08);}
 .nav-brand{font-family:var(--serif);font-size:1.1rem;font-weight:500;color:var(--navy);padding:1rem 0;margin-right:2rem;white-space:nowrap;}
-.nav-tabs{display:flex;list-style:none;}
-.nav-tabs a{display:block;padding:1.1rem 1.1rem;font-size:.72rem;font-weight:500;color:var(--text3);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;border-bottom:3px solid transparent;margin-bottom:-3px;transition:color .2s,border-color .2s;cursor:pointer;}
+.nav-tabs{display:flex;list-style:none;overflow-x:auto;}
+.nav-tabs a{display:block;padding:1.1rem .9rem;font-size:.68rem;font-weight:500;color:var(--text3);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;border-bottom:3px solid transparent;margin-bottom:-3px;transition:color .2s,border-color .2s;cursor:pointer;white-space:nowrap;}
 .nav-tabs a:hover,.nav-tabs a.active{color:var(--accent);border-bottom-color:var(--accent);}
-
 .page-wrap{max-width:1100px;margin:2rem auto;padding:0 1.5rem;display:grid;grid-template-columns:280px 1fr;gap:1.5rem;align-items:start;}
-
 .sidebar{position:sticky;top:60px;display:flex;flex-direction:column;gap:1rem;}
 .profile-card{background:var(--white);border:1px solid var(--border);border-top:4px solid var(--accent);padding:1.8rem 1.5rem;text-align:center;}
 .profile-img{width:160px;height:160px;border-radius:50%;object-fit:cover;object-position:top;border:4px solid var(--border);margin:0 auto 1rem;display:block;}
@@ -40,7 +36,7 @@ nav{background:var(--white);border-bottom:3px solid var(--accent);padding:0 2rem
 .profile-dept{font-size:.8rem;color:var(--text2);line-height:1.6;margin-bottom:1rem;padding-top:.8rem;border-top:1px solid var(--border);}
 .profile-email{font-size:.78rem;color:var(--accent);word-break:break-all;text-decoration:none;}
 .profile-email:hover{text-decoration:underline;}
-.social-links{display:flex;justify-content:center;gap:.6rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);}
+.social-links{display:flex;justify-content:center;gap:.6rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);flex-wrap:wrap;}
 .social-btn{display:inline-block;padding:.4rem .8rem;font-size:.68rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:1px solid var(--border);color:var(--text3);border-radius:3px;transition:all .2s;}
 .social-btn:hover{border-color:var(--accent);color:var(--accent);}
 .info-card{background:var(--white);border:1px solid var(--border);padding:1.2rem 1.5rem;}
@@ -49,12 +45,10 @@ nav{background:var(--white);border-bottom:3px solid var(--accent);padding:0 2rem
 .info-row:last-child{margin-bottom:0;}
 .info-label{font-size:.68rem;font-weight:500;color:var(--text3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.15rem;}
 .info-val{font-size:.82rem;color:var(--text);line-height:1.5;}
-
 .tab-nav{background:var(--white);border:1px solid var(--border);border-bottom:none;display:flex;overflow-x:auto;}
-.tab-btn{padding:.85rem 1.3rem;font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);cursor:pointer;border:none;background:none;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;}
+.tab-btn{padding:.85rem 1.1rem;font-size:.7rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);cursor:pointer;border:none;background:none;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;flex-shrink:0;}
 .tab-btn:hover{color:var(--accent);}
 .tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);background:#f0f6fc;}
-
 .tab-panel{background:var(--white);border:1px solid var(--border);padding:2rem;display:none;}
 .tab-panel.active{display:block;}
 .panel-section{margin-bottom:2.5rem;}
@@ -65,7 +59,6 @@ nav{background:var(--white);border-bottom:3px solid var(--accent);padding:0 2rem
 .panel-body strong{color:var(--text);font-weight:500;}
 .panel-body a{color:var(--accent);text-decoration:none;}
 .panel-body a:hover{text-decoration:underline;}
-
 .pub-item{padding:1.2rem 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:2rem 1fr;gap:1rem;}
 .pub-item:last-child{border-bottom:none;padding-bottom:0;}
 .pub-num{font-size:.8rem;font-weight:500;color:var(--accent);padding-top:.15rem;}
@@ -82,40 +75,43 @@ nav{background:var(--white);border-bottom:3px solid var(--accent);padding:0 2rem
 .pub-doi{margin-top:.3rem;}
 .pub-doi a{font-size:.75rem;color:var(--accent);text-decoration:none;word-break:break-all;}
 .pub-doi a:hover{text-decoration:underline;}
-
 .edu-item{padding:1rem 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start;}
 .edu-item:last-child{border-bottom:none;}
 .edu-degree{font-size:.9rem;font-weight:500;color:var(--text);}
 .edu-inst{font-size:.83rem;color:var(--text2);margin-top:.2rem;}
 .edu-year{font-size:.75rem;color:var(--text3);white-space:nowrap;margin-top:.2rem;}
-
 .tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem;}
 .tag{font-size:.75rem;padding:.3rem .8rem;background:#e9f2fa;color:var(--accent);border:1px solid #c5ddf5;border-radius:20px;}
-
 .award-item{padding:.9rem 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:2.5rem 1fr;gap:1rem;align-items:start;}
 .award-item:last-child{border-bottom:none;}
 .award-year{font-size:.72rem;color:var(--text3);font-weight:500;padding-top:.15rem;}
 .award-title{font-size:.88rem;color:var(--text2);line-height:1.6;}
 .award-title strong{color:var(--text);font-weight:500;}
-
 .skill-table{width:100%;border-collapse:collapse;}
 .skill-table tr{border-bottom:1px solid var(--border);}
 .skill-table tr:last-child{border-bottom:none;}
 .skill-table td{padding:.7rem 0;font-size:.88rem;}
 .skill-table td:first-child{color:var(--text);width:60%;}
 .skill-table td:last-child{color:var(--accent);font-size:.72rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;text-align:right;}
-
+.ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.ref-card{background:#f9f9f9;border:1px solid var(--border);padding:1.2rem;}
+.ref-name{font-weight:500;color:var(--navy);margin-bottom:.3rem;font-size:.9rem;}
+.ref-title{font-size:.82rem;color:var(--text2);line-height:1.7;}
+.ref-contact{font-size:.75rem;color:var(--text3);margin-top:.5rem;}
 .last-updated{font-size:.7rem;color:var(--text3);margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);}
-
 footer{background:var(--navy);color:rgba(255,255,255,.6);text-align:center;padding:1.5rem;font-size:.75rem;margin-top:3rem;}
 footer strong{color:#fff;}
 
 @media(max-width:768px){
-  .topbar{flex-direction:column;gap:.3rem;text-align:center;}
-  .page-wrap{grid-template-columns:1fr;}
-  .sidebar{position:static;}
-  nav{padding:0 1rem;}
-  .nav-brand{font-size:.9rem;margin-right:1rem;}
+  .topbar{flex-direction:column;gap:.3rem;text-align:center;padding:.6rem 1rem;}
+  .page-wrap{grid-template-columns:1fr;padding:0 .8rem;margin:1rem auto;}
+  .sidebar{position:static;width:100%;}
+  nav{padding:0 .5rem;}
+  .nav-brand{font-size:.85rem;margin-right:.5rem;}
+  .tab-panel{padding:1rem;}
+  .profile-img{width:120px;height:120px;}
+  .edu-item{grid-template-columns:1fr;}
+  .ref-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -123,7 +119,7 @@ footer strong{color:#fff;}
 
 <div class="topbar">
   <div class="topbar-l"><strong>Zitu Kundu</strong> — Graduate Researcher, University of Barishal</div>
-  <div class="topbar-r">Last Updated: March 2026</div>
+  <div class="topbar-r">Last Updated: February 2026</div>
 </div>
 
 <nav>
@@ -174,7 +170,6 @@ footer strong{color:#fff;}
       <button class="tab-btn" data-tab="contact">Contact</button>
     </div>
 
-    <!-- OVERVIEW -->
     <div id="overview" class="tab-panel active">
       <div class="panel-section">
         <div class="panel-title">Biography</div>
@@ -200,10 +195,9 @@ footer strong{color:#fff;}
           <span class="tag">Heavy Metal Contamination</span>
         </div>
       </div>
-      <div class="last-updated">Last Updated: March 2026</div>
+      <div class="last-updated">Last Updated: February 2026</div>
     </div>
 
-    <!-- EDUCATION -->
     <div id="education" class="tab-panel">
       <div class="panel-section">
         <div class="panel-title">Academic Credentials</div>
@@ -237,10 +231,9 @@ footer strong{color:#fff;}
           <p style="margin-top:.4rem;color:#888;font-size:.83rem;">Currently preparing for second attempt for improvement.</p>
         </div>
       </div>
-      <div class="last-updated">Last Updated: March 2026</div>
+      <div class="last-updated">Last Updated: February 2026</div>
     </div>
 
-    <!-- PUBLICATIONS -->
     <div id="publications" class="tab-panel">
       <div class="panel-section">
         <div class="panel-title">Published Journal Articles</div>
@@ -251,7 +244,7 @@ footer strong{color:#fff;}
             <div class="pub-title">Major, trace, and rare earth element geochemistry of the Kuakata beach sand, Bangladesh: Implications for provenance, weathering, tectonic setting, and heavy metal contamination</div>
             <div class="pub-authors">Roy, D. K., Khan, R., <strong>Kundu, Z.</strong>, Ornee, T. I., Rakib, M. M. H., Ovi, M. H., Roy, D., Pranto, A. I., Aishe, D. S., Abdullah, Md., Nandi, N., Islam, F., Khan, Md. H. R., Aldawood, S., Idris, A. M., Khan, A., Saha, A., &amp; Alam, Md. S.</div>
             <div class="pub-journal">Regional Studies in Marine Science, 104338</div>
-            <div class="pub-doi"><a href="https://doi.org/10.1016/j.rsma.2025.104338" target="_blank">https://doi.org/10.1016/j.rsma.2025.104338 ↗</a></div>
+            <div class="pub-doi"><a href="https://doi.org/10.1016/j.rsma.2025.104338" target="_blank">https://doi.org/10.1016/j.rsma.2025.104338 &#8599;</a></div>
           </div>
         </div>
         <div class="pub-item">
@@ -261,7 +254,7 @@ footer strong{color:#fff;}
             <div class="pub-title">Developing a Geometric Mean-Based Disaster Vulnerability Index (DVI): A Holistic Approach for Quantifying Multiplicative Vulnerability to Riverbank Erosion in Coastal Bangladesh</div>
             <div class="pub-authors">Khan, A., Rakib, M. M. H., Hasan, I., Islam, F., Aishee, D. S., Pranto, A. I., <strong>Kundu, Z.</strong>, Evan, R. I., Khan, R., &amp; Roy, D. K.</div>
             <div class="pub-journal">Regional Studies in Marine Science, 104774</div>
-            <div class="pub-doi"><a href="https://doi.org/10.1016/j.rsma.2026.104774" target="_blank">https://doi.org/10.1016/j.rsma.2026.104774 ↗</a></div>
+            <div class="pub-doi"><a href="https://doi.org/10.1016/j.rsma.2026.104774" target="_blank">https://doi.org/10.1016/j.rsma.2026.104774 &#8599;</a></div>
           </div>
         </div>
       </div>
@@ -296,10 +289,9 @@ footer strong{color:#fff;}
           <div><div class="pub-badges"><span class="badge badge-gray">Manuscript Completed</span></div><div class="pub-title">Cyclone vulnerability assessment of the Cox's Bazar District, Bangladesh</div></div>
         </div>
       </div>
-      <div class="last-updated">Last Updated: March 2026</div>
+      <div class="last-updated">Last Updated: February 2026</div>
     </div>
 
-    <!-- RESEARCH -->
     <div id="research" class="tab-panel">
       <div class="panel-section">
         <div class="panel-title">MS Thesis</div>
@@ -340,10 +332,9 @@ footer strong{color:#fff;}
           <p><strong>3. River Sediment Sampling — Kirtankhola, Lower Meghna &amp; Baleshwar Rivers</strong><br>120+ km of river length covered. Contamination-free sample collection using manually fabricated plunger system.</p>
         </div>
       </div>
-      <div class="last-updated">Last Updated: March 2026</div>
+      <div class="last-updated">Last Updated: February 2026</div>
     </div>
 
-    <!-- SKILLS -->
     <div id="skills" class="tab-panel">
       <div class="panel-section">
         <div class="panel-title">GIS &amp; Spatial Analysis</div>
@@ -371,10 +362,9 @@ footer strong{color:#fff;}
           <tr><td>Mendeley / Zotero</td><td>Advanced</td></tr>
         </table>
       </div>
-      <div class="last-updated">Last Updated: March 2026</div>
+      <div class="last-updated">Last Updated: February 2026</div>
     </div>
 
-    <!-- EXTRACURRICULAR -->
     <div id="extra" class="tab-panel">
       <div class="panel-section">
         <div class="panel-title">Awards &amp; Achievements</div>
@@ -384,7 +374,7 @@ footer strong{color:#fff;}
         </div>
         <div class="award-item">
           <div class="award-year">2020</div>
-          <div class="award-title"><strong>2nd Place</strong> — Competitive Poster Presentation on Earth, Climate and Pollution, Dept. of Geology &amp; Mining (among 46 participants). Title: "Environmental Pollution: The Silent Killer of the Earth and Our Responsibility"</div>
+          <div class="award-title"><strong>2nd Place</strong> — Competitive Poster Presentation on Earth, Climate and Pollution, Dept. of Geology &amp; Mining (among 46 participants)</div>
         </div>
         <div class="award-item">
           <div class="award-year">2016</div>
@@ -409,14 +399,13 @@ footer strong{color:#fff;}
       <div class="panel-section">
         <div class="panel-title">Voluntary Activities</div>
         <div class="panel-body">
-          <p>• Program Coordinator and Organizer — "Zoom the Earth 1.0" (Presentation Competition), organized by the EAGE Student Chapter, University of Barishal (11 March 2024)</p>
-          <p>• Program Organizer — Presentation Competition on World Earth Day 2023, organized by YouthMappers and EAGE Student Chapter BU (22 April 2023)</p>
+          <p>• Program Coordinator and Organizer — "Zoom the Earth 1.0" (Presentation Competition), EAGE Student Chapter, University of Barishal (11 March 2024)</p>
+          <p>• Program Organizer — Presentation Competition on World Earth Day 2023, YouthMappers and EAGE Student Chapter BU (22 April 2023)</p>
         </div>
       </div>
-      <div class="last-updated">Last Updated: March 2026</div>
+      <div class="last-updated">Last Updated: February 2026</div>
     </div>
 
-    <!-- CONTACT -->
     <div id="contact" class="tab-panel">
       <div class="panel-section">
         <div class="panel-title">Contact Information</div>
@@ -428,25 +417,25 @@ footer strong{color:#fff;}
       </div>
       <div class="panel-section">
         <div class="panel-title">References</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-          <div style="background:#f9f9f9;border:1px solid var(--border);padding:1.2rem;">
-            <div style="font-weight:500;color:var(--navy);margin-bottom:.3rem;">Dr. Dhiman Kumer Roy</div>
-            <div style="font-size:.82rem;color:var(--text2);line-height:1.7;">Associate Professor (Supervisor)<br>Dept. of Geology &amp; Mining<br>University of Barishal, Bangladesh</div>
-            <div style="font-size:.75rem;color:var(--text3);margin-top:.5rem;">ddkroy@bu.ac.bd<br>+880 1779 246 902</div>
+        <div class="ref-grid">
+          <div class="ref-card">
+            <div class="ref-name">Dr. Dhiman Kumer Roy</div>
+            <div class="ref-title">Associate Professor (Supervisor)<br>Dept. of Geology &amp; Mining<br>University of Barishal, Bangladesh</div>
+            <div class="ref-contact">ddkroy@bu.ac.bd<br>+880 1779 246 902</div>
           </div>
-          <div style="background:#f9f9f9;border:1px solid var(--border);padding:1.2rem;">
-            <div style="font-weight:500;color:var(--navy);margin-bottom:.3rem;">Dr. Rahat Khan</div>
-            <div style="font-size:.82rem;color:var(--text2);line-height:1.7;">Principal Scientific Officer (Co-supervisor)<br>Nuclear &amp; Radiation Dept., INST<br>AERE, Savar, Bangladesh</div>
-            <div style="font-size:.75rem;color:var(--text3);margin-top:.5rem;">rahatkhan.baec@gmail.com<br>+880 1717 764 344</div>
+          <div class="ref-card">
+            <div class="ref-name">Dr. Rahat Khan</div>
+            <div class="ref-title">Principal Scientific Officer (Co-supervisor)<br>Nuclear &amp; Radiation Dept., INST<br>AERE, Savar, Bangladesh</div>
+            <div class="ref-contact">rahatkhan.baec@gmail.com<br>+880 1717 764 344</div>
           </div>
-          <div style="background:#f9f9f9;border:1px solid var(--border);padding:1.2rem;">
-            <div style="font-weight:500;color:var(--navy);margin-bottom:.3rem;">Dr. Atikul Haque Farazi</div>
-            <div style="font-size:.82rem;color:var(--text2);line-height:1.7;">Assistant Professor<br>Dept. of Geology &amp; Mining<br>University of Barishal, Bangladesh</div>
-            <div style="font-size:.75rem;color:var(--text3);margin-top:.5rem;">ahfarazi@bu.ac.bd<br>+880 1798 200 820</div>
+          <div class="ref-card">
+            <div class="ref-name">Dr. Atikul Haque Farazi</div>
+            <div class="ref-title">Assistant Professor<br>Dept. of Geology &amp; Mining<br>University of Barishal, Bangladesh</div>
+            <div class="ref-contact">ahfarazi@bu.ac.bd<br>+880 1798 200 820</div>
           </div>
         </div>
       </div>
-      <div class="last-updated">Last Updated: March 2026</div>
+      <div class="last-updated">Last Updated: February 2026</div>
     </div>
 
   </main>
@@ -454,7 +443,7 @@ footer strong{color:#fff;}
 
 <footer>
   <strong>Zitu Kundu</strong> — Graduate Researcher, Dept. of Geology &amp; Mining, University of Barishal, Bangladesh<br>
-  <span style="margin-top:.3rem;display:block;">© 2026 · zitukundu01@gmail.com</span>
+  <span style="margin-top:.3rem;display:block;">&#169; 2026 &middot; zitukundu01@gmail.com</span>
 </footer>
 
 <script>
@@ -464,18 +453,28 @@ document.addEventListener('DOMContentLoaded', function() {
   var panels = document.querySelectorAll('.tab-panel');
 
   function activateTab(tabId) {
-    panels.forEach(function(p) { p.classList.remove('active'); });
-    tabBtns.forEach(function(b) { b.classList.remove('active'); });
-    navLinks.forEach(function(a) { a.classList.remove('active'); });
-
-    var panel = document.getElementById(tabId);
-    if (panel) panel.classList.add('active');
-
+    panels.forEach(function(p) {
+      p.classList.remove('active');
+    });
     tabBtns.forEach(function(b) {
-      if (b.getAttribute('data-tab') === tabId) b.classList.add('active');
+      b.classList.remove('active');
     });
     navLinks.forEach(function(a) {
-      if (a.getAttribute('data-tab') === tabId) a.classList.add('active');
+      a.classList.remove('active');
+    });
+    var panel = document.getElementById(tabId);
+    if (panel) {
+      panel.classList.add('active');
+    }
+    tabBtns.forEach(function(b) {
+      if (b.getAttribute('data-tab') === tabId) {
+        b.classList.add('active');
+      }
+    });
+    navLinks.forEach(function(a) {
+      if (a.getAttribute('data-tab') === tabId) {
+        a.classList.add('active');
+      }
     });
   }
 
