@@ -464,7 +464,7 @@ footer strong{color:#fff;}
   <span style="margin-top:.3rem;display:block;">&#169; 2026 &#183; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b3c9dac7c6d8c6ddd7c68382f3d4ded2dadf9dd0dcde">[email&#160;protected]</a></span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 document.addEventListener('DOMContentLoaded', function() {
   var tabBtns = document.querySelectorAll('.tab-btn');
   var navLinks = document.querySelectorAll('.nav-link');
@@ -472,10 +472,38 @@ document.addEventListener('DOMContentLoaded', function() {
   var navToggle = document.getElementById('navToggle');
   var navMenuMobile = document.getElementById('navMenuMobile');
 
-  navToggle.addEventListener('click', function() {
-    navMenuMobile.classList.toggle('open');
-  });
+  if (navToggle) {
+    navToggle.addEventListener('click', function() {
+      navMenuMobile.classList.toggle('open');
+    });
+  }
 
   function activateTab(tabId) {
     panels.forEach(function(p) { p.classList.remove('active'); });
-    tabBtns.forEach(functi
+    tabBtns.forEach(function(b) { b.classList.remove('active'); });
+    navLinks.forEach(function(a) { a.classList.remove('active'); });
+    var panel = document.getElementById(tabId);
+    if (panel) { panel.classList.add('active'); }
+    tabBtns.forEach(function(b) {
+      if (b.getAttribute('data-tab') === tabId) { b.classList.add('active'); }
+    });
+    navLinks.forEach(function(a) {
+      if (a.getAttribute('data-tab') === tabId) { a.classList.add('active'); }
+    });
+    if (navMenuMobile) { navMenuMobile.classList.remove('open'); }
+  }
+
+  tabBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      activateTab(this.getAttribute('data-tab'));
+    });
+  });
+
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      activateTab(this.getAttribute('data-tab'));
+    });
+  });
+});
+</script>
