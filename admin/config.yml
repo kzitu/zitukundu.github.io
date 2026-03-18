@@ -1,0 +1,77 @@
+backend:
+  name: github
+  repo: zitukundu/zitukundu.github.io
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "profile"
+    label: "Profile"
+    files:
+      - name: "profile"
+        label: "Profile Info"
+        file: "_data/profile.json"
+        fields:
+          - { label: "Full Name", name: "name", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Department", name: "department", widget: "string" }
+          - { label: "University", name: "university", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Address", name: "address", widget: "string" }
+          - { label: "Biography", name: "bio", widget: "text" }
+          - { label: "IELTS Score", name: "ielts", widget: "string" }
+          - { label: "Supervisor", name: "supervisor", widget: "string" }
+          - { label: "Expected Graduation", name: "graduation", widget: "string" }
+
+  - name: "publications"
+    label: "Publications"
+    folder: "_data/publications"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Authors", name: "authors", widget: "string" }
+      - { label: "Journal", name: "journal", widget: "string" }
+      - { label: "Year", name: "year", widget: "string" }
+      - { label: "DOI", name: "doi", widget: "string", required: false }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: ["Published", "Under Review", "In Preparation", "Manuscript Completed"]
+
+  - name: "research"
+    label: "Research & Ongoing Work"
+    folder: "_data/research"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - label: "Type"
+        name: "type"
+        widget: "select"
+        options: ["MS Thesis", "Ongoing", "Undergraduate", "Fieldwork"]
+
+  - name: "awards"
+    label: "Awards & Achievements"
+    folder: "_data/awards"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Year", name: "year", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+
+  - name: "education"
+    label: "Education"
+    folder: "_data/education"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Degree", name: "degree", widget: "string" }
+      - { label: "Institution", name: "institution", widget: "string" }
+      - { label: "Year", name: "year", widget: "string" }
+      - { label: "Details", name: "details", widget: "string", required: false }
