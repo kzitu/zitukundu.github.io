@@ -141,11 +141,13 @@ footer strong{color:#fff;}
   /* layout — single column */
   .page-wrap{grid-template-columns:1fr;padding:0;margin:0;gap:0;}
 
-  /* mobile hero (replaces sidebar) */
-  .sidebar{position:static;display:block;}
-  .profile-card{border-radius:0;border-left:none;border-right:none;border-top:none;border-bottom:3px solid var(--accent);padding:1.5rem 1rem;text-align:center;}
-  .profile-img{width:120px;height:120px;}
-  .info-card{border-radius:0;border-left:none;border-right:none;border-top:none;padding:1rem 1.2rem;}
+  /* mobile sidebar */
+  .sidebar{position:static;display:block;width:100%;}
+  .profile-card{border-radius:0;border-left:none;border-right:none;border-top:none;border-bottom:3px solid var(--accent);padding:1.5rem 1rem;text-align:center;width:100%;}
+  .profile-img{width:120px;height:120px;margin-left:auto;margin-right:auto;}
+  .profile-name,.profile-title,.profile-dept,.profile-email{display:block;text-align:center;width:100%;}
+  .social-links{justify-content:center;}
+  .info-card{border-radius:0;border-left:none;border-right:none;border-top:none;padding:1rem 1.2rem;width:100%;}
 
   /* tabs */
   .tab-nav{border-left:none;border-right:none;border-radius:0;}
