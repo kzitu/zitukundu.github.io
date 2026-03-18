@@ -1,1 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zitu Kundu — Geoscientist & Researcher</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --bg:       #f5f5f5;
+  --white:    #ffffff;
+  --navy:     #1b2a4a;
+  --navy2:    #243557;
+  --accent:   #2e6da4;
+  --border:   #e0e0e0;
+  --text:     #1a1a1a;
+  --text2:    #444;
+  --text3:    #888;
+  --sans:     'Inter', sans-serif;
+  --serif:    'Source Serif 4', serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ── TOP BAR ── */
+.topbar {
+  background: var(--navy);
+  padding: 0.6rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.topbar-left {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.05em;
+}
+.topbar-left strong { color: #fff; }
+.topbar-right {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.6);
+}
+
+/* ── NAV ── */
+nav {
+  background: var(--white);
+  border-bottom: 3px solid var(--accent);
+  padding: 0 2rem;
+  display: flex; align-items: center; gap: 0;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.nav-brand {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--navy);
+  padding: 1rem 0;
+  margin-right: 2rem;
+  white-space: nowrap;
+}
+.nav-tabs { display: flex; gap: 0; list-style: none; }
+.nav-tabs a {
+  display: block;
+  padding: 1.1rem 1.2rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text3);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -3px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.nav-tabs a:hover, .nav-tabs a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ── LAYOUT ── */
+.page-wrap {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  position: sticky; top: 60px;
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.profile-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--accent);
+  padding: 1.8rem 1.5rem;
+  text-align: center;
+}
+.profile-img {
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 4px solid var(--border);
+  margin: 0 auto 1rem;
+  display: block;
+}
+.profile-name {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+  line-height: 1.2;
+}
+.profile-title {
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.8rem;
+}
+.profile-dept {
+  font-size: 0.8rem;
+  color: var(--text2);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+.profile-email {
+  font-size: 0.78rem;
+  color: var(--accent);
+  word-break: break-all;
+  text-decoration: none;
+}
+.profile-email:hover { text-decoration: underline; }
+
+.social-links {
+  display: flex; justify-content: center; gap: 0.6rem;
+  margin-top: 1rem; padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.social-btn {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  color: var(--text3);
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+.social-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+.info-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 1.2rem 1.5rem;
+}
+.info-card-title {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+.info-row { margin-bottom: 0.8rem; }
+.info-row:last-child { margin-bottom: 0; }
+.info-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--text3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.15rem;
+}
+.info-val { font-size: 0.82rem; color: var(--text); line-height: 1.5; }
+
+/* ── MAIN CONTENT ── */
+.main-content {}
+
+/* ── TABS ── */
+.tab-nav {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-bottom: none;
+  display: flex; gap: 0;
+  overflow-x: auto;
+}
+.tab-btn {
+  padding: 0.85rem 1.4rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text3);
+  cursor: pointer;
+  border: none;
+  background: none;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.tab-btn:hover { color: var(--accent); }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); background: #f0f6fc; }
+
+.tab-panel {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  display: none;
+}
+.tab-panel.active { display: block; }
+
+/* ── PANEL CONTENT ── */
+.panel-section { margin-bottom: 2.5rem; }
+.panel-section:last-child { margin-bottom: 0; }
+.panel-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+}
+.panel-body {
+  font-size: 0.9rem;
+  color: var(--text2);
+  line-height: 1.85;
+}
+.panel-body strong { color: var(--text); font-weight: 500; }
+.panel-body a { color: var(--accent); text-decoration: none; }
+.panel-body a:hover { text-decoration: underline; }
+
+/* ── PUBLICATION ITEMS ── */
+.pub-item {
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 1rem;
+}
+.pub-item:last-child { border-bottom: none; padding-bottom: 0; }
+.pub-num {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent);
+  padding-top: 0.15rem;
+}
+.pub-content {}
+.pub-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+.badge {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.55rem;
+  border-radius: 2px;
+}
+.badge-green { background: #e8f5e2; color: #3a7a25; }
+.badge-yellow { background: #fdf6e0; color: #7a6010; }
+.badge-blue { background: #e6f0fa; color: #1b5a9a; }
+.badge-gray { background: #f0f0f0; color: #666; }
+.pub-title {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 0.35rem;
+  font-weight: 400;
+}
+.pub-authors {
+  font-size: 0.8rem;
+  color: var(--text3);
+  line-height: 1.6;
+  margin-bottom: 0.25rem;
+}
+.pub-authors strong { color: var(--text2); font-weight: 500; }
+.pub-journal { font-size: 0.8rem; color: var(--text3); }
+.pub-doi { margin-top: 0.3rem; }
+.pub-doi a {
+  font-size: 0.75rem;
+  color: var(--accent);
+  text-decoration: none;
+  word-break: break-all;
+}
+.pub-doi a:hover { text-decoration: underline; }
+
+/* ── EDUCATION ITEMS ── */
+.edu-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: start;
+}
+.edu-item:last-child { border-bottom: none; }
+.edu-degree { font-size: 0.9rem; font-weight: 500; color: var(--text); }
+.edu-inst { font-size: 0.83rem; color: var(--text2); margin-top: 0.2rem; }
+.edu-year { font-size: 0.75rem; color: var(--text3); white-space: nowrap; margin-top: 0.2rem; }
+
+/* ── INTEREST TAGS ── */
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
+.tag {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.8rem;
+  background: #e9f2fa;
+  color: var(--accent);
+  border: 1px solid #c5ddf5;
+  border-radius: 20px;
+}
+
+/* ── AWARD ITEMS ── */
+.award-item {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+.award-item:last-child { border-bottom: none; }
+.award-year { font-size: 0.72rem; color: var(--text3); font-weight: 500; padding-top: 0.15rem; }
+.award-title { font-size: 0.88rem; color: var(--text2); line-height: 1.6; }
+.award-title strong { color: var(--text); font-weight: 500; }
+
+/* ── SKILL TABLE ── */
+.skill-table { width: 100%; border-collapse: collapse; }
+.skill-table tr { border-bottom: 1px solid var(--border); }
+.skill-table tr:last-child { border-bottom: none; }
+.skill-table td { padding: 0.7rem 0; font-size: 0.88rem; }
+.skill-table td:first-child { color: var(--text); width: 60%; }
+.skill-table td:last-child {
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+/* ── LAST UPDATED ── */
+.last-updated {
+  font-size: 0.7rem;
+  color: var(--text3);
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.75rem;
+  margin-top: 3rem;
+}
+footer strong { color: #fff; }
+
+/* ── RESPONSIVE ── */
+@media(max-width: 768px) {
+  .topbar { flex-direction: column; gap: 0.3rem; text-align: center; }
+  .page-wrap { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  nav { padding: 0 1rem; }
+  .nav-brand { font-size: 0.9rem; margin-right: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-left"><strong>Zitu Kundu</strong> — Graduate Researcher, University of Barishal</div>
+  <div class="topbar-right">Last Updated: February 2026</div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Zitu Kundu</div>
+  <ul class="nav-tabs">
+    <li><a href="#overview" class="active" onclick="showTab('overview',this)">Overview</a></li>
+    <li><a href="#education" onclick="showTab('education',this)">Education</a></li>
+    <li><a href="#publications" onclick="showTab('publications',this)">Publications</a></li>
+    <li><a href="#research" onclick="showTab('research',this)">Research</a></li>
+    <li><a href="#skills" onclick="showTab('skills',this)">Skills</a></li>
+    <li><a href="#awards" onclick="showTab('awards',this)">Awards</a></li>
+    <li><a href="#contact" onclick="showTab('contact',this)">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE -->
+<div class="page-wrap">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="profile-card">
+      <img src="Zitu.png" alt="Zitu Kundu" class="profile-img">
+      <div class="profile-name">Zitu Kundu</div>
+      <div class="profile-title">Graduate Researcher</div>
+      <div class="profile-dept">
+        Department of Geology &amp; Mining<br>
+        University of Barishal, Bangladesh
+      </div>
+      <a href="mailto:zitukundu01@gmail.com" class="profile-email">zitukundu01@gmail.com</a>
+      <div class="social-links">
+        <a href="https://linkedin.com" target="_blank" class="social-btn">LinkedIn</a>
+        <a href="https://scholar.google.com" target="_blank" class="social-btn">Scholar</a>
+        <a href="https://www.academia.edu" target="_blank" class="social-btn">Academia</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-title">Quick Info</div>
+      <div class="info-row">
+        <div class="info-label">Degree</div>
+        <div class="info-val">MS in Geology &amp; Mining (Thesis-based)</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Expected Graduation</div>
+        <div class="info-val">April / May 2026</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Supervisor</div>
+        <div class="info-val">Dr. Dhiman Kumer Roy</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Phone</div>
+        <div class="info-val">+880 1789 971 249</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Location</div>
+        <div class="info-val">Kornokathi, Barishal — 8254, Bangladesh</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+
+    <!-- TAB NAV -->
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="showTab('overview',this)">Overview</button>
+      <button class="tab-btn" onclick="showTab('education',this)">Education</button>
+      <button class="tab-btn" onclick="showTab('publications',this)">Publications</button>
+      <button class="tab-btn" onclick="showTab('research',this)">Research</button>
+      <button class="tab-btn" onclick="showTab('skills',this)">Skills</button>
+      <button class="tab-btn" onclick="showTab('awards',this)">Awards</button>
+      <button class="tab-btn" onclick="showTab('contact',this)">Contact</button>
+    </div>
+
+    <!-- OVERVIEW -->
+    <div id="overview" class="tab-panel active">
+      <div class="panel-section">
+        <div class="panel-title">Biography</div>
+        <div class="panel-body">
+          <p>Zitu Kundu is a graduate researcher at the Department of Geology &amp; Mining, University of Barishal, Bangladesh. His MS thesis — currently defended — is titled <strong>"A Comprehensive Geochemical Investigation of the Kuakata Beach Sand: Implications for Provenance, Weathering, Heavy Metal Contamination, and Natural Radioactivity."</strong></p>
+          <br>
+          <p>His research works with <strong>major oxides, trace elements, and rare earth elements (REEs)</strong> to constrain sediment provenance, weathering history, and geochemical conditions of the Bengal coastal system. He also conducts radiological risk assessment, health risk assessment, and spatial distribution analysis of heavy metals and NORMs.</p>
+          <br>
+          <p>Zitu has <strong>2 published papers in Elsevier journals</strong>, 1 manuscript under review at a Q1 journal (Marine Pollution Bulletin), and 4 manuscripts in preparation. He is a member of EAGE (European Association of Geoscientists and Engineers) and YouthMappers.</p>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <div class="panel-title">Research Interests</div>
+        <div class="tags">
+          <span class="tag">Geochemistry</span>
+          <span class="tag">Sedimentology</span>
+          <span class="tag">Coastal Hydrology</span>
+          <span class="tag">Environmental Pollution</span>
+          <span class="tag">Climate Change</span>
+          <span class="tag">GIS &amp; Remote Sensing</span>
+          <span class="tag">Radiological Risk Assessment</span>
+          <span class="tag">Provenance Analysis</span>
+          <span class="tag">Heavy Metal Contamination</span>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <div class="panel-title">Affiliations</div>
+        <div class="panel-body">
+          <p>• Organizing Secretary, EAGE — Barishal University Chapter (ID: M2023-122056) — Jan 2024 to Dec 2024</p>
+          <p>• Organizing Secretary, YouthMappers — University of Barishal Chapter — Jan 2023 to Dec 2023</p>
+          <p>• Executive Member, Research and Skill Development Society — May 2021 to Sept 2024</p>
+          <p>• Executive Member, Barishal University Science Club — 2022 to 2024</p>
+          <p>• Executive Member, Barishal University Research and Higher Education Society — 2022 to 2024</p>
+          <p>• Executive Member, English Language Club, University of Barishal — 2020 to 2022</p>
+        </div>
+      </div>
+      <div class="last-updated">Last Updated: February 2026</div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div id="education" class="tab-panel">
+      <div class="panel-section">
+        <div class="panel-title">Academic Credentials</div>
+        <div class="edu-item">
+          <div>
+            <div class="edu-degree">Master of Science in Geology and Mining (Thesis-based)</div>
+            <div class="edu-inst">University of Barishal, Bangladesh</div>
+          </div>
+          <div class="edu-year">Expected Apr/May 2026</div>
+        </div>
+        <div class="edu-item">
+          <div>
+            <div class="edu-degree">Bachelor of Science in Geology and Mining</div>
+            <div class="edu-inst">University of Barishal, Bangladesh</div>
+            <div class="edu-inst" style="margin-top:0.2rem;">CGPA: 3.34 / 4.00</div>
+          </div>
+          <div class="edu-year">2019 – 2024</div>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <div class="panel-title">Courses &amp; Certifications</div>
+        <div class="panel-body">
+          <p>• Computer Fundamentals and Office Applications — Oct 2024 to Dec 2024 (60 hours)</p>
+          <p>• Application of GIS and Remote Sensing in Research — 2022 to 2023</p>
+          <p>• Basic Linux Commands: Application in Ubuntu — 2021</p>
+          <p>• Data Analysis with SPSS — 2021</p>
+          <p>• MS Excel for Beginners — 2021</p>
+          <p>• Oil &amp; Gas Industry Operations and Markets — 2020</p>
+          <p>• Write Professional Emails in English — 2020</p>
+          <p>• World Climate Summit-2020, Eco-Network Global — 2020</p>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <div class="panel-title">Standardization Test</div>
+        <div class="panel-body">
+          <p><strong>IELTS (Computer-Delivered)</strong> — Overall Band Score: 6.0</p>
+          <p style="margin-top:0.3rem;font-size:0.83rem;">Listening: 6.0 &nbsp;|&nbsp; Reading: 5.5 &nbsp;|&nbsp; Writing: 5.5 &nbsp;|&nbsp; Speaking: 6.0</p>
+          <p style="margin-top:0.4rem;color:#888;font-size:0.83rem;">Currently preparing for second attempt for improvement.</p>
+        </div>
+      </div>
+      <div class="last-updated">Last Updated: February 2026</div>
+    </div>
+
+    <!-- PUBLICATIONS -->
+    <div id="publications" class="tab-panel">
+      <div class="panel-section">
+        <div class="panel-title">Published Journal Articles</div>
+
+        <div class="pub-item">
+          <div class="pub-num">1</div>
+          <div class="pub-content">
+            <div class="pub-badges">
+              <span class="badge badge-green">Published</span>
+              <span class="badge badge-blue">Elsevier</span>
+              <span class="badge badge-gray">2025</span>
+            </div>
+            <div class="pub-title">Major, trace, and rare earth element geochemistry of the Kuakata beach sand, Bangladesh: Implications for provenance, weathering, tectonic setting, and heavy metal contamination</div>
+            <div class="pub-authors">Roy, D. K., Khan, R., <strong>Kundu, Z.</strong>, Ornee, T. I., Rakib, M. M. H., Ovi, M. H., Roy, D., Pranto, A. I., Aishe, D. S., Abdullah, Md., Nandi, N., Islam, F., Khan, Md. H. R., Aldawood, S., Idris, A. M., Khan, A., Saha, A., &amp; Alam, Md. S.</div>
+            <div class="pub-journal">Regional Studies in Marine Science, 104338</div>
+            <div class="pub-doi"><a href="https://doi.org/10.1016/j.rsma.2025.104338" target="_blank">https://doi.org/10.1016/j.rsma.2025.104338 ↗</a></div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-num">2</div>
+          <div class="pub-content">
+            <div class="pub-badges">
+              <span class="badge badge-green">Published</span>
+              <span class="badge badge-blue">Elsevier</span>
+              <span class="badge badge-gray">2026</span>
+            </div>
+            <div class="pub-title">Developing a Geometric Mean-Based Disaster Vulnerability Index (DVI): A Holistic Approach for Quantifying Multiplicative Vulnerability to Riverbank Erosion in Coastal Bangladesh</div>
+            <div class="pub-authors">Khan, A., Rakib, M. M. H., Hasan, I., Islam, F., Aishee, D. S., Pranto, A. I., <strong>Kundu, Z.</strong>, Evan, R. I., Khan, R., &amp; Roy, D. K.</div>
+            <div class="pub-journal">Regional Studies in Marine Science, 104774</div>
+            <div class="pub-doi"><a href="https://doi.org/10.1016/j.rsma.2026.104774" target="_blank">https://doi.org/10.1016/j.rsma.2026.104774 ↗</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <div class="panel-title">Under Review</div>
+        <div class="pub-item">
+          <div class="pub-num">3</div>
+          <div class="pub-content">
+            <div class="pub-badges">
+              <span class="badge badge-yellow">Under Review</span>
+              <span class="badge badge-blue">Marine Pollution Bulletin</span>
+              <span class="badge badge-gray">Elsevier Q1</span>
+            </div>
+            <div class="pub-title">Studying the geochemical processes of environmental radionuclides' alterations in a coastal area in terms of lanthanides: Probabilistic radiological risk assessment</div>
+            <div class="pub-authors"><strong>Kundu, Z.</strong>, Khan, R., Roy, D., Pranto, A. I., Aishe, D. S., Ibrahim, K. A., Islam, M. S., Idris, A. M., Naher, K., &amp; Roy, D. K.</div>
+            <div class="pub-journal">Marine Pollution Bulletin, Elsevier — Status: Under Review</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <div class="panel-title">Manuscripts in Preparation</div>
+        <div class="pub-item">
+          <div class="pub-num">4</div>
+          <div class="pub-content">
+            <div class="pub-badges"><span class="badge badge-gray">In Preparation</span></div>
+            <div class="pub-title">Geochemical composition of the Brahmaputra River sediments: Understanding the sedimentary process and provenance studies</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-num">5</div>
+          <div class="pub-content">
+            <div class="pub-badges"><span class="badge badge-gray">In Preparation</span></div>
+            <div class="pub-title">Tracing the sediment pathways of the Punarbhaba River: A geochemical study and environmental contamination</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-num">6</div>
+          <div class="pub-content">
+            <div class="pub-badges"><span class="badge badge-gray">In Preparation</span></div>
+            <div class="pub-title">The dynamic geochemical river system of the Dhaleswari River: An association of provenance, weathering, and tectonic settings</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-num">7</div>
+          <div class="pub-content">
+            <div class="pub-badges"><span class="badge badge-gray">Manuscript Completed</span></div>
+            <div class="pub-title">Cyclone vulnerability assessment of the Cox's Bazar District, Bangladesh</div>
+          </div>
+        </div>
+      </div>
+      <div class="last-updated">Last Updated: February 2026</div>
+    </div>
+
+    <!-- RESEARCH -->
+    <div id="research" class="tab-panel">
+      <div class="panel-section">
+        <div class="panel-title">MS Thesis</div>
+        <div class="panel-body">
+          <p><strong>"A Comprehensive Geochemical Investigation of the Kuakata Beach Sand: Implications for Provenance, Weathering, Heavy Metal Contamination, and Natural Radioactivity"</strong></p>
+          <br>
+          <p>Working with major, trace, and REEs to constrain sediment provenance, weathering, and geochemical conditions; evaluating NORMs distribution; radiological risk assessment; health risks assessment; heavy metal and toxic element concentrations; spatial distribution.</p>
+          <br>
+          <p><strong>Advisor:</strong> Dr. Dhiman Kumer Roy, Associate Professor, Dept. of Geology &amp; Mining, University of Barishal</p>
+          <p><strong>Co-Supervisor:</strong> Dr. Rahat Khan, Principal Scientific Officer, Institute of Nuclear Science and Technology, AERE, Savar</p>
+          <p style="margin-top:0.5rem;"><span class="badge badge-green" style="font-size:0.72rem;">Thesis Defended</span></p>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <div class="panel-title">Ongoing Research</div>
+        <div class="panel-body">
+          <p>1. Geochemical composition of the Brahmaputra River sediments — sedimentary process and provenance studies</p>
+          <p>2. Sediment pathways of the Punarbhaba River — geochemical study and environmental contamination</p>
+          <p>3. Geochemical river system of the Dhaleswari River — provenance, weathering, and tectonic settings</p>
+          <p>4. Cyclone vulnerability assessment of Cox's Bazar District — manuscript completed</p>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <div class="panel-title">Undergraduate Research</div>
+        <div class="panel-body">
+          <p><strong>"Morphological Changes and Riverbank Erosion of the Kirtonkhola River in Barishal (1990–2020): Analysis Using ArcGIS and Future Predictions"</strong></p>
+          <br>
+          <p>Assessment of riverbank erosion using ArcGIS, anthropogenic effects, and future prediction for the river system.</p>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <div class="panel-title">Fieldwork Experience</div>
+        <div class="panel-body">
+          <p><strong>1. Geological Mapping — Eastern Hill Tracts &amp; Bengal Basin Coastal Zones</strong><br>
+          Sites: Kuakata, Sitakund, Kaptai, Sylhet (1st–4th year academic fieldworks)<br>
+          Sedimentological analysis, stratigraphic and structural investigations, petrographic observations, hydro-geochemical analysis.</p>
+          <br>
+          <p><strong>2. Industrial Field Work — Sylhet Gas Field Limited (SGFL)</strong><br>
+          Practical knowledge of gas lifting processes and machinery management.</p>
+          <br>
+          <p><strong>3. River Sediment Sampling — Kirtankhola, Lower Meghna &amp; Baleshwar Rivers</strong><br>
+          120+ km of river length covered. Contamination-free collection using manually fabricated plunger system, with proper labelling, preservation, and transport for geochemical and radiological analyses.</p>
+        </div>
+      </div>
+      <div class="last-updated">Last Updated: February 2026</div>
+    </div>
+
+    <!-- SKILLS -->
+    <div id="skills" class="tab-panel">
+      <div class="panel-section">
+        <div class="panel-title">GIS &amp; Spatial Analysis</div>
+        <table class="skill-table">
+          <tr><td>ArcGIS 10.8.2</td><td>Competent</td></tr>
+          <tr><td>Google Earth Pro</td><td>Advanced</td></tr>
+          <tr><td>Geosoft</td><td>Basic</td></tr>
+        </table>
+      </div>
+      <div class="panel-section">
+        <div class="panel-title">Data Analysis &amp; Programming</div>
+        <table class="skill-table">
+          <tr><td>Python Programming</td><td>Competent</td></tr>
+          <tr><td>IBM SPSS 27</td><td>Competent</td></tr>
+          <tr><td>EPA PMF 5.0</td><td>Advanced</td></tr>
+          <tr><td>Kaleida Graph</td><td>Competent</td></tr>
+        </table>
+      </div>
+      <div class="panel-section">
+        <div class="panel-title">Productivity &amp; Design</div>
+        <table class="skill-table">
+          <tr><td>MS Office (Word, Excel, PowerPoint)</td><td>Advanced</td></tr>
+          <tr><td>Adobe Illustrator</td><td>Competent</td></tr>
+          <tr><td>Filmora 14</td><td>Advanced</td></tr>
+          <tr><td>Mendeley / Zotero</td><td>Advanced</td></tr>
+        </table>
+      </div>
+      <div class="last-updated">Last Updated: February 2026</div>
+    </div>
+
+    <!-- AWARDS -->
+    <div id="awards" class="tab-panel">
+      <div class="panel-section">
+        <div class="panel-title">Awards &amp; Achievements</div>
+        <div class="award-item">
+          <div class="award-year">2020</div>
+          <div class="award-title">World Climate Summit-2020 Contest — Eco Network Global (25–26 September 2020)</div>
+        </div>
+        <div class="award-item">
+          <div class="award-year">2020</div>
+          <div class="award-title"><strong>2nd Place</strong> — Competitive Poster Presentation on Earth, Climate and Pollution, organized by Dept. of Geology &amp; Mining (among 46 participants). Title: "Environmental Pollution: The Silent Killer of the Earth and Our Responsibility" (8 September 2020)</div>
+        </div>
+        <div class="award-item">
+          <div class="award-year">2016</div>
+          <div class="award-title"><strong>1st Place</strong> — National High School Programming Contest (NHSPC), organized by the Ministry of ICT, Bangladesh — Higher Secondary Section (500+ participants) (19 March 2016)</div>
+        </div>
+        <div class="award-item">
+          <div class="award-year">2016</div>
+          <div class="award-title"><strong>8th Place</strong> — National Science Olympiad 2016, Divisional Winner (8 January 2016)</div>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <div class="panel-title">Voluntary Activities</div>
+        <div class="panel-body">
+          <p>• Program Coordinator and Organizer — "Zoom the Earth 1.0" (Presentation Competition), organized by the EAGE Student Chapter, University of Barishal (11 March 2024)</p>
+          <p>• Program Organizer — Presentation Competition on World Earth Day 2023, organized by YouthMappers and EAGE Student Chapter BU (22 April 2023)</p>
+        </div>
+      </div>
+      <div class="last-updated">Last Updated: February 2026</div>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contact" class="tab-panel">
+      <div class="panel-section">
+        <div class="panel-title">Contact Information</div>
+        <div class="panel-body">
+          <p><strong>Email:</strong> <a href="mailto:zitukundu01@gmail.com">zitukundu01@gmail.com</a></p>
+          <p><strong>Phone:</strong> +880 1789 971 249</p>
+          <p><strong>Address:</strong> Kornokathi, Barishal — 8254, Bangladesh</p>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <div class="panel-title">References</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div style="background:#f9f9f9;border:1px solid var(--border);padding:1.2rem;">
+            <div style="font-weight:500;color:var(--navy);margin-bottom:0.3rem;">Dr. Dhiman Kumer Roy</div>
+            <div style="font-size:0.82rem;color:var(--text2);line-height:1.7;">Associate Professor (Supervisor)<br>Dept. of Geology &amp; Mining<br>University of Barishal, Bangladesh</div>
+            <div style="font-size:0.75rem;color:var(--text3);margin-top:0.5rem;"><a href="mailto:ddkroy@bu.ac.bd" style="color:var(--accent);">ddkroy@bu.ac.bd</a><br>+880 1779 246 902</div>
+          </div>
+          <div style="background:#f9f9f9;border:1px solid var(--border);padding:1.2rem;">
+            <div style="font-weight:500;color:var(--navy);margin-bottom:0.3rem;">Dr. Rahat Khan</div>
+            <div style="font-size:0.82rem;color:var(--text2);line-height:1.7;">Principal Scientific Officer (Co-supervisor)<br>Nuclear &amp; Radiation Dept., INST<br>AERE, Savar, Bangladesh</div>
+            <div style="font-size:0.75rem;color:var(--text3);margin-top:0.5rem;"><a href="mailto:rahatkhan.baec@gmail.com" style="color:var(--accent);">rahatkhan.baec@gmail.com</a><br>+880 1717 764 344</div>
+          </div>
+          <div style="background:#f9f9f9;border:1px solid var(--border);padding:1.2rem;">
+            <div style="font-weight:500;color:var(--navy);margin-bottom:0.3rem;">Dr. Atikul Haque Farazi</div>
+            <div style="font-size:0.82rem;color:var(--text2);line-height:1.7;">Assistant Professor<br>Dept. of Geology &amp; Mining<br>University of Barishal, Bangladesh</div>
+            <div style="font-size:0.75rem;color:var(--text3);margin-top:0.5rem;"><a href="mailto:ahfarazi@bu.ac.bd" style="color:var(--accent);">ahfarazi@bu.ac.bd</a><br>+880 1798 200 820</div>
+          </div>
+        </div>
+      </div>
+      <div class="last-updated">Last Updated: February 2026</div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Zitu Kundu</strong> — Graduate Researcher, Dept. of Geology &amp; Mining, University of Barishal, Bangladesh<br>
+  <span style="margin-top:0.3rem;display:block;">© 2026 · zitukundu01@gmail.com</span>
+</footer>
+
+<script>
+function showTab(id, el) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn, .nav-tabs a').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if (el) el.classList.add('active');
+  const matchBtn = document.querySelector(`.tab-btn[onclick*="${id}"]`);
+  const matchLink = document.querySelector(`.nav-tabs a[onclick*="${id}"]`);
+  if (matchBtn) matchBtn.classList.add('active');
+  if (matchLink) matchLink.classList.add('active');
+  return false;
+}
+</script>
+</body>
+</html>
 
